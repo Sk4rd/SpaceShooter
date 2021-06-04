@@ -25,16 +25,18 @@ public class Bullet extends Actor
         World world = getWorld();
         setLocation(getX(), getY() - 10);
         
-        if (isAtEdge())
-        {
-            world.removeObject(this);
-        }
+
         
         if (isTouching(Enemy.class))
         {
             Enemy enemy = (Enemy) getOneIntersectingObject(Enemy.class);
             world.removeObject(this);
             enemy.health -= this.damage;
+        }
+        
+        else if (isAtEdge())
+        {
+            world.removeObject(this);
         }
     }
     
