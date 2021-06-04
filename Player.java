@@ -68,7 +68,6 @@ public class Player extends Actor
 
     private void shootBullet()
     {
-        Space world = (Space) getWorld();
-        world.spawnBullet(getX(), getY() - 35);
+        getWorld().addObject(new Bullet(), getX(), getY() - 35);
     }
 }

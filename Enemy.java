@@ -13,8 +13,8 @@ public class Enemy extends Actor
     
     public Enemy(int health, int speed)
     {
-        this.health = 75;
-        this.speed = 2;
+        this.health = health;
+        this.speed = speed;
     }
     
     public void act() 
@@ -36,12 +36,14 @@ public class Enemy extends Actor
         if (getX() > 768 || getX() < 32)
         {
             this.speed *= -1;
-            setLocation(getX(), getY() + 64);
+            setLocation(getX(), getY() + 32);
         }
         
         if (getY() > 568)
         {
             setLocation(32, 32);
         }
+        
+        // Soft borders in if statements above
     }
 }
