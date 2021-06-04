@@ -22,7 +22,8 @@ public class Player extends Actor
         
         if (isTouching(Enemy.class))
         {
-            getWorld().removeObject(this);
+            // reset the game
+            Greenfoot.setWorld(new Space());
         }
     }
     

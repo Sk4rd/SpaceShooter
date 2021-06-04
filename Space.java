@@ -19,11 +19,6 @@ public class Space extends World
                          getRandomNum(25, 75),
                          getRandomNum(1, 4));
         }
-        
-        if (getObjects(Player.class).isEmpty())
-        {
-            Greenfoot.stop();
-        }
     }   
 
     private void spawnPlayer(int x, int y)
