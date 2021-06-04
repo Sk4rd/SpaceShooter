@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    int health = 100;
+    int health;
     int speed = 8;
     int timer = 0;
     
     public Player()
     {
+        this.health = 100;
     }
     
     public Player(int health)
