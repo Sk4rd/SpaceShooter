@@ -24,4 +24,10 @@ public class Space extends World
         // Spawn in lower middle
         addObject(new Player(), 400, 550);
     }
+    
+    public void spawnBullet(int posX, int posY)
+    {
+        // Spawn at location of actor
+        addObject(new Bullet(), posX, posY);
+    }
 }

@@ -6,4 +6,6 @@ comment1.target=Space()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ spawnPlayer()
-numComments=3
+comment3.params=posX\ posY
+comment3.target=void\ spawnBullet(int,\ int)
+numComments=4
