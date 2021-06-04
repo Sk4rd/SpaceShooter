@@ -2,8 +2,6 @@
 comment0.target=Bullet
 comment1.params=
 comment1.target=Bullet()
-comment2.params=damage
-comment2.target=Bullet(int)
-comment3.params=
-comment3.target=void\ act()
-numComments=4
+comment2.params=
+comment2.target=void\ act()
+numComments=3

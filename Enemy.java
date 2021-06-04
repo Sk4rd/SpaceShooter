@@ -23,6 +23,7 @@ public class Enemy extends Actor
         {
             // increment the score of player
             world.getObjects(Player.class).get(0).score += 75;
+            Greenfoot.playSound("dying_enemy.wav");
             world.removeObject(this);
         }
     }

@@ -10,11 +10,6 @@ public class Bullet extends Actor
         this.damage = 25;
     }
     
-    public Bullet(int damage)
-    {
-        this.damage = damage;
-    }
-    
     public void act() 
     {
         World world = getWorld();

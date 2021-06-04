@@ -7,17 +7,18 @@ public class Space extends World
     {    
         // Create a new world with 800x600 cells with a cell size of 1x1 pixels
         super(800, 600, 1);
-        spawnPlayer(400, 520);
+        spawnPlayer(400, 534);
     }
         
     public void act()
     {
         if (getObjects(Enemy.class).isEmpty())
-        {           
+        {   
+            getObjects(Player.class).get(0).setLocation(400, 534);
             spawnEnemies(getRandomNum(1, 8),
                          getRandomNum(1, 6),
                          getRandomNum(25, 75),
-                         getRandomNum(1, 4));
+                         getRandomNum(1, 4));            
         }
     }   
 
@@ -53,11 +54,6 @@ public class Space extends World
             posY += 64;
         }
         
-    }
-        
-    private void cleanWorld()
-    {
-        removeObjects(getObjects(null));
     }
     
     public int getRandomNum(int start, int end)

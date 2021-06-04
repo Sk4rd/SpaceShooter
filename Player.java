@@ -23,6 +23,7 @@ public class Player extends Actor
         if (isTouching(Enemy.class))
         {
             // reset the game
+            Greenfoot.playSound("lose.wav");
             Greenfoot.setWorld(new Space());
         }
     }
@@ -66,6 +67,7 @@ public class Player extends Actor
 
     private void shootBullet()
     {
+        Greenfoot.playSound("bullet.wav");
         getWorld().addObject(new Bullet(), getX(), getY() - 35);
     }
     
