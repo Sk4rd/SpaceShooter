@@ -12,7 +12,7 @@ public class Enemy extends Actor
     
     public Enemy()
     {
-        this.health = 100;
+        this.health = 75;
     }
     
     public void act() 
