@@ -8,12 +8,47 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    /**
-     * Act - do whatever the Player wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int health = 100;
+    int speed = 8;
+    
+    public Player()
+    {
+    }
+    
+    public Player(int health)
+    {
+        this.health = health;
+    }
+    
     public void act() 
     {
-        // Add your action code here.
-    }    
+        steer();
+    }
+    
+    /*
+     * Check for key presses and initate movement based on them.
+     */
+    private void steer()
+    {
+        // Steer left
+        if (Greenfoot.isKeyDown("A"))
+        {
+            move(-speed); // negative direction
+        }
+        
+        if (Greenfoot.isKeyDown("D"))
+        {
+            move(speed);
+        }
+        
+        if (Greenfoot.isKeyDown("space"))
+        {
+            shootBullet();
+        }
+    }
+
+    private void shootBullet()
+    {
+        
+    }
 }
