@@ -7,6 +7,4 @@ comment2.params=damage
 comment2.target=Bullet(int)
 comment3.params=
 comment3.target=void\ act()
-comment4.params=amount
-comment4.target=void\ dealDamage(int)
-numComments=5
+numComments=4

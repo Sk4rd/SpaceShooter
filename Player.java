@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     int health;
-    int speed = 8;
+    int speed = 5;
     int timer = 0;
     
     public Player()
@@ -35,15 +35,27 @@ public class Player extends Actor
     private void steer()
     {
         // Steer left
-        if (Greenfoot.isKeyDown("A") && getX() > 20)
+        if (Greenfoot.isKeyDown("A") && getX() > 64)
         {
             move(-speed);
         }
         
         // Steer right
-        if (Greenfoot.isKeyDown("D") && getX() < 780)
+        if (Greenfoot.isKeyDown("D") && getX() < 736)
         {
             move(speed);
+        }
+        
+        // Steer up
+        if (Greenfoot.isKeyDown("W") && getY() > 64)
+        {
+            setLocation(getX(), getY() - speed);
+        }
+        
+        // Steer down
+        if (Greenfoot.isKeyDown("S") && getY() < 536)
+        {
+            setLocation(getX(), getY() + speed);
         }
         
         // Shoot

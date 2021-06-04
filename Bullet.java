@@ -25,6 +25,7 @@ public class Bullet extends Actor
         World world = getWorld();
         setLocation(getX(), getY() - 10);
         
+        // Check for enemy and deal damage
         if (isTouching(Enemy.class))
         {
             Enemy enemy = (Enemy) getOneIntersectingObject(Enemy.class);
@@ -36,9 +37,5 @@ public class Bullet extends Actor
         {
             world.removeObject(this);
         }
-    }
-    
-    private void dealDamage(int amount)
-    {
     }
 }

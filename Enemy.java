@@ -9,17 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Enemy extends Actor
 {
     int health;
+    int speed;
     
-    public Enemy()
+    public Enemy(int health, int speed)
     {
         this.health = 75;
+        this.speed = 2;
     }
     
     public void act() 
     {
-        World world = getWorld();
+        Space world = (Space) getWorld();
         
-        fly(2);
+        fly();
         // Enemy dies when health is 0 or less
         if (this.health <= 0)
         {
@@ -27,8 +29,19 @@ public class Enemy extends Actor
         }
     }
     
-    private void fly(int speed)
+    private void fly()
     {
-        setLocation(getX() + speed, getY());
+        setLocation(getX() + this.speed, getY());
+        
+        if (getX() > 768 || getX() < 32)
+        {
+            this.speed *= -1;
+            setLocation(getX(), getY() + 64);
+        }
+        
+        if (getY() > 568)
+        {
+            setLocation(32, 32);
+        }
     }
 }
