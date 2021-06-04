@@ -25,8 +25,6 @@ public class Bullet extends Actor
         World world = getWorld();
         setLocation(getX(), getY() - 10);
         
-
-        
         if (isTouching(Enemy.class))
         {
             Enemy enemy = (Enemy) getOneIntersectingObject(Enemy.class);

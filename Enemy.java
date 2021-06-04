@@ -18,10 +18,17 @@ public class Enemy extends Actor
     public void act() 
     {
         World world = getWorld();
+        
+        fly(2);
         // Enemy dies when health is 0 or less
         if (this.health <= 0)
         {
             world.removeObject(this);
         }
-    }    
+    }
+    
+    private void fly(int speed)
+    {
+        setLocation(getX() + speed, getY());
+    }
 }
