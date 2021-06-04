@@ -1,15 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Enemy here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Enemy extends Actor
 {
     int health;
     int speed;
+    int timer = 0;
     
     public Enemy(int health, int speed)
     {
@@ -25,6 +21,8 @@ public class Enemy extends Actor
         // Enemy dies when health is 0 or less
         if (this.health <= 0)
         {
+            // increment the score of player
+            world.getObjects(Player.class).get(0).score += 75;
             world.removeObject(this);
         }
     }

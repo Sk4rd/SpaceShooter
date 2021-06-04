@@ -1,32 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Player here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Player extends Actor
 {
-    int health;
-    int speed = 5;
+    int speed;
     int timer = 0;
+    int score;
     
     public Player()
     {
-        this.health = 100;
+        this.score = 0;
+        this.speed = 5;
     }
-    
-    public Player(int health)
-    {
-        this.health = health;
-    }
-    
+   
     public void act() 
     {
         steer();
+        displayInfo();        
         // increment timer to function as a delay
-        timer++;
+        this.timer++;
+        
+        if (isTouching(Enemy.class))
+        {
+            getWorld().removeObject(this);
+        }
     }
     
     /*
@@ -62,12 +59,18 @@ public class Player extends Actor
         if (Greenfoot.isKeyDown("space") && timer > 30)
         {
             shootBullet();
-            timer = 0;
+            this.timer = 0;
         }
     }
 
     private void shootBullet()
     {
         getWorld().addObject(new Bullet(), getX(), getY() - 35);
+    }
+    
+    private void displayInfo()
+    {
+        World world = getWorld();
+        world.showText("Score: " + this.score, 100, 550);
     }
 }
