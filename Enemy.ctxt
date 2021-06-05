@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=Enemy
-comment1.params=health\ speed
-comment1.target=Enemy(int,\ int)
+comment1.params=health\ speed\ randomMotion
+comment1.target=Enemy(int,\ int,\ boolean)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ fly()
-numComments=4
+comment4.params=start\ end
+comment4.target=int\ getRandomNum(int,\ int)
+numComments=5
